@@ -1,0 +1,37 @@
+name:                hsTCL
+version:             0.1.0.0
+github:              "marlls1989/hsTCL"
+license:             BSD3
+author:              "Marcos Luiggi Lemos Sartori"
+maintainer:          "marcos.sartori@acad.pucrs.br"
+copyright:           "2018 Marcos Luiggi Lemos Sartori"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+category:            Language
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/marlls1989/hsTCL#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+tests:
+  hsTCL-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hsTCL
